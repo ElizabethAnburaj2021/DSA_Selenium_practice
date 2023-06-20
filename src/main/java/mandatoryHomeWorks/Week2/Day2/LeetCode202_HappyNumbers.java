@@ -1,1 +1,1 @@
-package mandatoryHomeWorks.Week2.Day2;
+package mandatoryHomeWorks.week2.day2;

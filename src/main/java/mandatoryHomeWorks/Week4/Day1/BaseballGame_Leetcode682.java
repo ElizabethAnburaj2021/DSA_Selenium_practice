@@ -1,4 +1,4 @@
-package mandatoryHomeWorks.Week4.Day1;
+package mandatoryHomeWorks.week4.day1;
 
 import java.util.Stack;
 

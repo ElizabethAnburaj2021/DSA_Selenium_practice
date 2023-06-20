@@ -1,9 +1,8 @@
-package mandatoryHomeWorks.Selenium;
+package mandatoryHomeWorks.selenium;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -37,25 +36,25 @@ public class Amazon_Week8_Day1 {
 		driver.findElement(By.xpath("(//img[@class='s-image'])[1]")).click();
 		System.out.println("The first product link Clicked successfully");
 		
-		//7. Click 'Add to Cart' button
-		ArrayList< String> al=new ArrayList<>(driver.getWindowHandles());
-		driver.switchTo().window(al.get(1));
-		
 		//6. Take a screen shot of the product displayed 
-		//this.takeSnapShot(driver, "c://test.png") ;
-		 
-//8. Get the cart subtotal and verify if it is correct.
+				//Take the screenshot
+		        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				try {
+		            FileUtils.copyFile(screenshot, new File("C:\\Users\\Manivannan V\\eclipse-workspace\\New_SDET_MergedProject\\snap1.png"));
+		        } catch (IOException e) {
+		            System.out.println(e.getMessage());
+		        }
+				
+				//7. Click 'Add to Cart' button
+				ArrayList< String> al=new ArrayList<>(driver.getWindowHandles());
+				driver.switchTo().window(al.get(1));
+				
+				//8. Get the cart subtotal and verify if it is correct.
+				
 //9.close the browser
 		 
 	}
-	private void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
-		//Convert web driver object to TakeScreenshot
-		TakesScreenshot scrShot =((TakesScreenshot)webdriver);
-		//Call getScreenshotAs method to create image file
-		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-		//Move image file to new destination
-		File DestFile=new File(fileWithPath);
-		//Copy file at destination
-		FileUtils.copyFile(SrcFile, DestFile);
-	}
+	
+		
+	
 }

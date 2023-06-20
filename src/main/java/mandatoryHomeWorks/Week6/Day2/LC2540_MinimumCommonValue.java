@@ -1,4 +1,4 @@
-package mandatoryHomeWorks.Week6.Day2;
+package mandatoryHomeWorks.week6.day2;
 
 import java.util.HashSet;
 import java.util.Set;
